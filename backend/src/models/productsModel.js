@@ -6,8 +6,8 @@ const getAll = async () => {
   return result;
 };
 
-const getById = (productId) => {
-const [[product]] = connection.execute(
+const getById = async (productId) => {
+const [[product]] = await connection.execute(
   'SELECT * FROM StoreManager.products WHERE id = ?',
   [productId],
 );
