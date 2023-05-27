@@ -1,1 +1,5 @@
-/* Este vai ser o único lugar do nosso código onde importamos o objeto services direto do seu arquivo */
+const productsService = require('./productsService');
+
+module.exports = {
+  productsService,
+};
