@@ -10,9 +10,18 @@ const validateId = (id) => {
   };
 } return { type: null, message: '' };
 };
-
+const validateSaleId = (id) => {
+  const { error } = idSchema.validate(id);
+  if (error) {
+ return {
+    type: 'SALE_NOT_FOUND',
+    message: 'Sale not found', 
+  };
+} return { type: null, message: '' };
+};
 // const validateNewProduct = ()
 
 module.exports = {
   validateId,
+  validateSaleId,
 };
