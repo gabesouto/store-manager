@@ -13,8 +13,21 @@ const getById = async (id) => {
   if (result) return result;
   return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
 };
-
+const insertSale = async (data) => {
+  const insertId = await salesModel.insertSale();
+  const salePromise = data.map((sale) => salesModel.insertSaleProduct(insertId, sale));
+  const result = await Promise.all(salePromise);
+  console.log('AQQQ', result);
+  const resultData = {
+    id: insertId,
+    itemsSold: data,
+      
+  };
+  console.log(resultData);
+  return resultData;
+};
 module.exports = {
   getAll,
   getById,
+  insertSale,
 };

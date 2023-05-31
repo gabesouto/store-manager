@@ -24,7 +24,6 @@ const insertProduct = async ({ name }) => {
   const selectQuery = 'SELECT * FROM StoreManager.products WHERE id = ?';
   const [[insertedData]] = await connection.execute(selectQuery, [insertedId]);
 
-  console.log('productModel', insertedData);
   return insertedData;
 };
 

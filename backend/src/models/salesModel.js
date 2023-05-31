@@ -30,12 +30,42 @@ const getAll = async () => {
       productId: row.product_id,
       quantity: row.quantity,
     }));
-    console.log(' sale model result', formattedRows);
+
     return formattedRows;
   };
+  
+  const insertSale = async () => {
+    const insertSaleQuery = 'INSERT INTO StoreManager.sales(date) VALUES (NOW())';
+    const [result] = await connection.execute(insertSaleQuery);
+    const { insertId } = result;
+    return insertId;
+  };
+  
+  const insertSaleProduct = async (insertId, { productId, quantity }) => {
+    const insertSaleProductQuery = `
+      INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity)
+      VALUES (?, ?, ?)
+    `;
+  
+    // Executar a consulta de inserção de um produto vendido
+  const [result2] = await connection
+  .execute(insertSaleProductQuery, [insertId, productId, quantity]);
+
+  const saleId = result2.insertId;
+  
+    const selectSaleQuery = 'SELECT * FROM StoreManager.sales WHERE id = ?';
+    const [[insertedSaleData]] = await connection.execute(selectSaleQuery, [saleId]);
+  
+    console.log('Inserted sale:', insertedSaleData);
+    return insertedSaleData;
+  };
+  
 module.exports = {
   getAll,
   getById,
+  insertSale,
+  insertSaleProduct,
+
 };
 // "saleId": 1,
 // "date": "2021-09-09T04:54:29.000Z",
