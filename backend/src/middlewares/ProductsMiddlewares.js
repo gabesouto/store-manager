@@ -1,3 +1,5 @@
+const { productsService } = require('../services');
+
 function nameValidation(req, res, next) {
   const { name } = req.body;
   if (!name || name === '') {
@@ -11,6 +13,19 @@ function nameValidation(req, res, next) {
   next();
 }
 
+async function validateSingleProductId(req, res, next) {
+  const { id } = req.params;
+  
+  // Realize uma consulta no banco de dados para verificar se o productId existe
+  const product = await productsService.getById(id);
+
+  if (product.type === 'PRODUCT_NOT_FOUND') {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+
+  next();
+}
 module.exports = {
   nameValidation,
+  validateSingleProductId,
 };

@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const { productIdValidation,
-   quantityValidation, validateSingleProductId } = require('../middlewares/salesMiddlewares');
+   quantityValidation,
+   validateSingleProductId,
+  } = require('../middlewares/salesMiddlewares');
 const { salesController } = require('../controllers');
 
 const salesRouter = Router();
@@ -11,9 +13,10 @@ salesRouter.post(
 '/', 
 productIdValidation,
 quantityValidation,
+// validateSingleProductId,
+
 validateSingleProductId,
 
-// validateSingleProductId,
 // validateMultipleProductIds, 
 salesController.insertSale,
 );

@@ -23,7 +23,7 @@ describe('Testes de unidade do model de produtos', function () {
 
   it('retorna um erro caso receba um ID inválido', async function () {
     // Arrange (no need for specific arrangement in this test case)
-    
+    // sinon.stub(connection, 'execute').resolves([allProducts]);
     // Act
     const result = await productsService.getById('a');
     

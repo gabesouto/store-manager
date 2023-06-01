@@ -15,9 +15,8 @@ const getById = async (req, res) => {
 };
 const insertSale = async (req, res) => {
   const data = req.body;
-  console.log('INSERT SALE CONTROLLER', data);
   const result = await salesService.insertSale(data);
-  res.status(201).json(result);
+    res.status(result.type).json(result.message);
 };
 module.exports = {
   getAll,
