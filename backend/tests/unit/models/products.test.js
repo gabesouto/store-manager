@@ -54,4 +54,19 @@ describe('Testes de unidade do model de produtos', function () {
     // Assert
     expect(result).to.deep.equal(allProducts[0]);
   });
+  it('should insert a new product and return the inserted data', async function () {
+    const data = { name: 'New Product' };
+    const expected = { id: 1, name: 'New Product' };
+
+    // Stub the productsModel.insertProduct function to return the inserted data
+    sinon.stub(productsModel, 'insertProduct').resolves(expected);
+
+    const result = await productsService.insertProduct(data);
+
+    // Assert that the result matches the expected data
+    expect(result).to.deep.equal(expected);
+
+    // Verify that the productsModel.insertProduct function was called once with the correct data
+    sinon.assert.calledOnceWithExactly(productsModel.insertProduct, data);
+  });
 });

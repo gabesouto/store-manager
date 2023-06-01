@@ -1,4 +1,4 @@
-const { productsService, salesService } = require('../services');
+const { productsService } = require('../services');
 
 function productIdValidation(req, res, next) {
   const data = req.body;

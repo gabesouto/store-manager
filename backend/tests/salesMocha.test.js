@@ -10,7 +10,7 @@ describe('Product API', function () {
     it('should return all products', function (done) {
       chai
         .request('http://localhost:3001')
-        .get('/products')
+        .get('/sales')
         .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res.body).to.be.an('array');
