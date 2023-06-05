@@ -1,9 +1,8 @@
 const sinon = require('sinon');
 const { productIdValidation,
    quantityValidation,
-   validateSingleProductId,
+
      } = require('../../../src/middlewares/salesMiddlewares');
-const { productsService } = require('../../../src/services');
 
 describe('productIdValidation', function () {
   it('should return 400 error if "productId" is missing', function () {

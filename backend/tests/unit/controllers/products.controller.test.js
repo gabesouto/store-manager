@@ -16,8 +16,8 @@ describe('products controller tests', function () {
     res.json = sinon.stub().returns();
   });
 
-  describe('Testes da função getAll', function () {
-    it('retorna a lista completa de produtos', async function () {
+  describe('Tests for getAll function', function () {
+    it('returns the complete list of products', async function () {
       // arrange
       sinon.stub(productsService, 'getAll').resolves(allProducts);
 
@@ -30,34 +30,34 @@ describe('products controller tests', function () {
     });
   });
 
-  describe('Testes da função getById', function () {
-      it('retorna um erro caso o id não exista', async function () {
-        // Insere um id no req.params
-        req.params = { id: 99 };
-        // arrange
-        sinon.stub(productsService, 'getById')
-          .resolves({ type: 'PRODUCT_NOT_FOUND', message: 'Product not found' });
-        // act
-        await productsController.getById(req, res);
-        // assert
-        expect(res.status).to.be.calledWith(404);
-        expect(res.json).to.be.calledWithExactly({ message: 'Product not found' });
-      });
-
-      it('retorna o produto caso o id exista', async function () {
-        // Insere um id no req.params
-        req.params = { id: 1 };
-        // arrange
-        sinon.stub(productsService, 'getById').resolves(allProducts[0]);
-        // act
-        await productsController.getById(req, res);
-        // assert
-        expect(res.status).to.be.calledWith(200);
-        // expect(res.json).to.be.calledWithExactly(allProducts[0]);
-      });
+  describe('Tests for getById function', function () {
+    it('returns an error if the id does not exist', async function () {
+      // Set an id in req.params
+      req.params = { id: 100 };
+      // arrange
+      sinon.stub(productsService, 'getById')
+        .resolves({ type: 'PRODUCT_NOT_FOUND', message: 'Product not found' });
+      // act
+      await productsController.getById(req, res);
+      // assert
+      expect(res.status).to.be.calledWith(404);
+      expect(res.json).to.be.calledWithExactly({ message: 'Product not found' });
     });
 
-    afterEach(function () {
-      sinon.restore();
+    it('returns the product if the id exists', async function () {
+      // Set an id in req.params
+      req.params = { id: 1 };
+      // arrange
+      sinon.stub(productsService, 'getById').resolves(allProducts[0]);
+      // act
+      await productsController.getById(req, res);
+      // assert
+      expect(res.status).to.be.calledWith(200);
+      // expect(res.json).to.be.calledWithExactly(allProducts[0]);
     });
   });
+
+  afterEach(function () {
+    sinon.restore();
+  });
+});
