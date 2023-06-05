@@ -69,4 +69,18 @@ describe('Testes de unidade do model de produtos', function () {
     // Verify that the productsModel.insertProduct function was called once with the correct data
     sinon.assert.calledOnceWithExactly(productsModel.insertProduct, data);
   });
+  beforeEach(function () {
+    sinon.restore(); // Restaura todos os stubs e spies antes de cada teste
+  });
+
+  // it('should return type 404 and message "Product not found" if any product is not found', async function () {
+  //   const getByIdStub = sinon.stub(productsModel, 'getById');
+  //   getByIdStub.withArgs(1).resolves({ productId: 1, name: 'Product 1' });
+  //   getByIdStub.withArgs(2).resolves(undefined);
+
+  //   const result = await salesModel.insertSale([{ productId: 1 }, { productId: 2 }]);
+
+  //   expect(result).toEqual({ type: 404, message: 'Product not found' });
+  //   sinon.assert.calledTwice(getByIdStub);
+  // });
 });

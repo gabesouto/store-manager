@@ -16,8 +16,14 @@ const getById = async (req, res) => {
 const insertSale = async (req, res) => {
   const data = req.body;
   const result = await salesService.insertSale(data);
+  
+  if (result.type === 404) {
+    res.status(result.type).json({ message: result.message });
+  } else {
     res.status(result.type).json(result.message);
+  }
 };
+
 module.exports = {
   getAll,
   getById,
