@@ -19,6 +19,7 @@ const insertProduct = async (req, res) => {
   const result = await productsService.insertProduct(data);
   res.status(201).json(result);
 };
+
 const updateProduct = async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
@@ -26,9 +27,23 @@ const updateProduct = async (req, res) => {
   const result = await productsService.updateProduct(id, name);
   res.status(200).json(result);
 };
+
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  const result = await productsService.deleteProduct(id);
+  
+  if (result) {
+    return res.status(404).json({ message: result.message }); // Add return statement here
+  }
+  res.status(204).json(null);
+  
+};
+
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
   updateProduct,
+  deleteProduct,
 };

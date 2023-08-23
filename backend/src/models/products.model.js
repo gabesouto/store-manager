@@ -27,10 +27,8 @@ const insertProduct = async ({ name }) => {
   const query = 'INSERT INTO StoreManager.products(name) VALUES (?)';
   const [result] = await connection.execute(query, [name]);
   
-  // Obtém o ID do último registro inserido
   const insertedId = result.insertId;
 
-  // Consulta os dados inseridos na tabela
   const selectQuery = 'SELECT * FROM StoreManager.products WHERE id = ?';
   const [[insertedData]] = await connection.execute(selectQuery, [insertedId]);
 
@@ -47,11 +45,21 @@ const updateProduct = async (id, name) => {
   return updatedData;
 };
 
+const deleteProduct = async (id) => {
+  const deleteSaleQuery = 'DELETE FROM StoreManager.products WHERE id = ?';
+  const result = await connection.execute(deleteSaleQuery, [id]);
+
+  return result;
+};
+
+
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
   updateProduct,
   getByProductId,
+  deleteProduct,
   
 };

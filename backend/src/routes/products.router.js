@@ -5,9 +5,13 @@ const { nameValidation, validateSingleProductId } = require('../middlewares/Prod
 const productsRouter = Router();
 
 productsRouter.get('/', productsController.getAll);
+
 productsRouter.get('/:id', productsController.getById);
+
 productsRouter.post('/', nameValidation, productsController.insertProduct);
-productsRouter
-.put('/:id', nameValidation, validateSingleProductId, productsController.updateProduct);
+
+productsRouter.put('/:id', nameValidation, validateSingleProductId, productsController.updateProduct);
+
+productsRouter.delete('/:id', productsController.deleteProduct);
 
 module.exports = productsRouter;  

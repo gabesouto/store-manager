@@ -34,8 +34,18 @@ const insertSale = async (data) => {
   return { type: 201, message: resultData };
 };
 
+const deleteSale = async (id) => {
+  const error = validateSaleId(id);
+  if (error.type) return error;
+  const result = await salesModel.deleteSale(id);
+  if (result) { return null; }
+
+  return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
+};
+
 module.exports = {
   getAll,
   getById,
   insertSale,
+  deleteSale,
 };
