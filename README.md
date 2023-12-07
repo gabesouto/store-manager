@@ -1,22 +1,21 @@
+# Store Manager Project
 
-# Projeto Store Manager
+In this project, I developed an API using a layered architecture!
 
-Neste projeto, desenvolvi uma API utilizando a arquitetura em camadas!
+The API I created is a sales management system, allowing the creation, viewing, deletion, and updating of products and sales. I used the MySQL database to manage data effectively. Additionally, the API was developed following RESTful principles.
 
-A API que criei é um sistema de gerenciamento de vendas, permitindo a criação, visualização, exclusão e atualização de produtos e vendas. Utilizei o banco de dados MySQL para gerenciar os dados de forma eficaz. Além disso, a API foi desenvolvida seguindo os princípios RESTful.
+Throughout the development of this project, I created comprehensive tests to ensure the functionality of the implementations, thereby reinforcing my skills as a developer.
 
-Durante o desenvolvimento deste projeto, criei testes abrangentes para garantir a funcionalidade das implementações, reforçando assim minha habilidade como pessoa desenvolvedora.
+During this project, I was able to:
 
-Ao longo deste projeto, fui capaz de:
+- Successfully interact with a MySQL relational database;
+- Implement a robust and well-structured API, following the layered architecture;
+- Ensure data integrity by implementing validations for the data received by the API;
+- Reinforce my skills by writing effective tests for the APIs, ensuring the correct implementation of endpoints.
 
-- Interagir com sucesso com um banco de dados relacional MySQL;
-- Implementar uma API sólida e bem-estruturada, seguindo a arquitetura em camadas;
-- Garantir a integridade dos dados por meio da implementação de  validações para os dados recebidos pela API;
-- Reforçar minhas habilidades escrevendo testes eficazes para as APIs, assegurando a implementação correta dos endpoints.
-Estou satisfeito com o resultado deste projeto e animado para continuar a aprimorar minhas habilidades enquanto enfrento novos desafios emocionantes!
-## Stacks utilizadas
+I am satisfied with the result of this project and excited to continue improving my skills while facing new exciting challenges!
 
-
+## Used Stacks
 
 - Node.js
 - MySQL
@@ -24,13 +23,12 @@ Estou satisfeito com o resultado deste projeto e animado para continuar a aprimo
 - JWT (JSON Web Tokens)
 - Mocha / Chai
 
-## Rodando localmente
+## Running Locally
 
-Clone o projeto
+Clone the project
 
 ```bash
-  git clone git@github.com:gabesouto/Blogs-API.git
-```
+git clone git@github.com:gabesouto/store-manager.git
 
 Entre no diretório do projeto
 
@@ -38,7 +36,7 @@ Entre no diretório do projeto
   cd store-manager
 ```
 
-Instale as dependências
+Install dependencies
 
 ```bash
 npm install
@@ -49,5 +47,5 @@ npm install
 ```bash
 docker-compose up -d db
 
-# É possível ver os logs da aplicação com `docker logs -n 20 -f <nome-do-container>`
+# It's possible to see the logs using the following command: `docker logs -n 20 -f <name-of-the-container>`
 docker logs -n 20 -f store_manager
