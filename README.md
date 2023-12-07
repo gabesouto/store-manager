@@ -27,25 +27,61 @@ I am satisfied with the result of this project and excited to continue improving
 
 Clone the project
 
-```bash
-git clone git@github.com:gabesouto/store-manager.git
+```
+  git clone git@github.com:gabesouto/store-manager.git
+```
 
 Entre no diretório do projeto
 
-```bash
-  cd store-manager
+```
+cd store-manager/backend
 ```
 
 Install dependencies
 
-```bash
+```
 npm install
 
 ```
 
+## running the application
+
+>
+> - The `backend` container automatically starts the application.
+>
+> - Evaluator tests are executed outside the container. If environment variables are not defined, the tests will use values similar to those in the .env-example file
+> - ⚠️ It is required to have Node version 16.14 or higher installed locally.
+
+<details>
+<summary>🐳 Starting the application with Docker Compose</summary>
 
 ```bash
+# Install dependencies
+npm install
+
+# Start the compose containers for `backend` and `db`
+# The application will be available at `http://localhost:3001` in development mode
+docker-compose up -d
+
+# You can view the application logs with `docker logs -n 20 -f <container-name>`
+docker logs -n 20 -f store_manager
+```
+
+</details>
+
+<details>
+<summary>🖥️ Starting the application locally</summary>
+
+  
+⚠️ Attention: When running locally, the application should receive environment variables as exemplified in env.example to communicate with the database service.
+```bash
+# Install dependencies
+npm install
+
+# Start only the `db` service in compose
 docker-compose up -d db
 
-# It's possible to see the logs using the following command: `docker logs -n 20 -f <name-of-the-container>`
-docker logs -n 20 -f store_manager
+# Start the application in development mode
+npm run dev:local
+
+
