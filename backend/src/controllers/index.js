@@ -1,9 +1,7 @@
-/* Este vai ser o único lugar do nosso código onde importamos o objeto Model direto do seu arquivo */
-
-const productsController = require('./productsController');
-const salesController = require('./salesController');
+const productsController = require('./products.controller');
+const salesController = require('./sales.controller');
 
 module.exports = {
-  productsController,
-  salesController,
+   productsController,
+   salesController,
 };

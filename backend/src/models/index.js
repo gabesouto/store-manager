@@ -1,8 +1,8 @@
-const productsModel = require('./productsModel');
-const salesModel = require('./salesModel');
+const productsModel = require('./products.model');
+const salesModel = require('./sales.model');
 
 module.exports = {
-  productsModel,
-  salesModel,
-  
+   productsModel,
+   salesModel,
+
 };
