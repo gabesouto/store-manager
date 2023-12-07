@@ -23,28 +23,8 @@ I am satisfied with the result of this project and excited to continue improving
 - JWT (JSON Web Tokens)
 - Mocha / Chai
 
-## Running Locally
 
-Clone the project
-
-```
-  git clone git@github.com:gabesouto/store-manager.git
-```
-
-Entre no diretório do projeto
-
-```
-cd store-manager/backend
-```
-
-Install dependencies
-
-```
-npm install
-
-```
-
-## running the application
+## Running the Application
 
 >
 > - The `backend` container automatically starts the application.
