@@ -68,7 +68,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 - Returns an object with the sale that matches the id.
 
-![](https://github.com/gabesouto/store-manager/blob/main/public/saleById.gif)
+![](https://github.com/gabesouto/store-manager/blob/main/public/getSaleById.gif)
 
 #### POST `/sales`
 
@@ -80,7 +80,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 - Updates a sale that matches the id.
 
-![](https://github.com/gabesouto/store-manager/blob/main/public/getSaleById.gif)
+![](https://github.com/gabesouto/store-manager/blob/main/public/putSale.gif)
 
 #### DELETE `/sales/:id`
 
