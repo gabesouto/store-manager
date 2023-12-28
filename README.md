@@ -18,7 +18,7 @@ I am satisfied with the result of this project and excited to continue improving
 <details>
 <summary>Endpoints</summary>
 
-### Products
+## Products
 
 #### GET `/products`
 
@@ -56,7 +56,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/searchProduct.gif)
 
-### Sales
+## Sales
 
 #### GET `/sales`
 
