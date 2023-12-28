@@ -26,6 +26,12 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/ezgif.com-video-to-gif-converter.gif)
 
+#### GET `/products/:id`
+
+- Returns an object with the product that matches the id.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/productsById.gif)
+
 ## Used Stacks
 
 - Node.js
