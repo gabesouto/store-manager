@@ -32,6 +32,18 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/productsById.gif)
 
+#### POST `/products`
+
+- Creates a new product.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/postProduct.gif)
+
+#### PUT `/products/:id`
+
+- Updates a product that matches the id.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/putProduct.gif)
+
 ## Used Stacks
 
 - Node.js
