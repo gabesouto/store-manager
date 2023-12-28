@@ -8,10 +8,10 @@ const getAll = async () => {
 
 const getById = async (id) => {
   const error = validateId(id);
-  console.log(error);
+
   if (error.type) return error;
   const result = await productsModel.getById(id);
-  console.log('SERVICE', result);
+
   if (result) return result;
   
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
@@ -39,9 +39,7 @@ const deleteProduct = async (id) => {
 };
 
 const searchProduct = async (q) => {
-  console.log('SERVICE', 'aaaaaaaaaaaaaaa');
   const result = await productsModel.searchProduct(q);
-  console.log('SERVICE', result);
   return result;
 };
 

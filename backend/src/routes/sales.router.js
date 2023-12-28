@@ -3,7 +3,7 @@ const {
     productIdValidation,
     quantityValidation,
     validateSingleProductId,
-  } = require('../middlewares/salesMiddlewares');
+  } = require('../middlewares/sales.middlewares');
 
 const { salesController } = require('../controllers');
 

@@ -50,6 +50,12 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/deleteProduct.gif)
 
+#### GET `/products/search?q=:searchTerm`
+
+- Returns an array of products that match the search term.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/searchProduct.gif)
+
 ### Sales
 
 #### GET `/sales`
@@ -74,7 +80,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 - Updates a sale that matches the id.
 
-![](https://github.com/gabesouto/store-manager/blob/main/public/putSale.gif)
+![](https://github.com/gabesouto/store-manager/blob/main/public/getSaleById.gif)
 
 #### DELETE `/sales/:id`
 

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { productsController } = require('../controllers');
-const { nameValidation, validateSingleProductId } = require('../middlewares/ProductsMiddlewares');
+const { nameValidation, validateSingleProductId } = require('../middlewares/products.middlewares');
 
 const productsRouter = Router();
 
