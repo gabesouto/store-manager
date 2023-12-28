@@ -13,6 +13,7 @@ const getById = async (id) => {
   if (result) return result;
   return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
 };
+
 const insertSale = async (data) => {
   const producsSold = await Promise
   .all(data.map(({ productId }) => productsModel.getById(productId)));
@@ -22,15 +23,14 @@ const insertSale = async (data) => {
 
   const insertId = await salesModel.insertSale();
   const salePromise = data.map((sale) => salesModel.insertSaleProduct(insertId, sale));
-  console.log(salePromise);
-  const result = await Promise.all(salePromise);
 
-  console.log('AQQQ', result);
+  await Promise.all(salePromise);
+
   const resultData = {
     id: insertId,
     itemsSold: data,
   };
-  console.log(resultData);
+  
   return { type: 201, message: resultData };
 };
 

@@ -15,6 +15,15 @@ During this project, I was able to:
 
 I am satisfied with the result of this project and excited to continue improving my skills while facing new exciting challenges!
 
+<details>
+<summary>Endpoints</summary>
+
+### Products
+
+#### GET `/products`
+
+- Returns an array with all products.
+
 ## Used Stacks
 
 - Node.js
@@ -27,14 +36,14 @@ I am satisfied with the result of this project and excited to continue improving
 
 Clone the project
 
-```bash
+````bash
 git clone git@github.com:gabesouto/store-manager.git
 
 Entre no diretório do projeto
 
 ```bash
   cd store-manager
-```
+````
 
 Install dependencies
 
@@ -43,9 +52,9 @@ npm install
 
 ```
 
-
 ```bash
 docker-compose up -d db
 
 # It's possible to see the logs using the following command: `docker logs -n 20 -f <name-of-the-container>`
 docker logs -n 20 -f store_manager
+```
