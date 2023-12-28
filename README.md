@@ -44,11 +44,43 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/putProduct.gif)
 
-### DELETE `/products/:id`
+#### DELETE `/products/:id`
 
 - Deletes a product that matches the id.
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/deleteProduct.gif)
+
+### Sales
+
+#### GET `/sales`
+
+- Returns an array with all sales.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/getAllSales.gif)
+
+#### GET `/sales/:id`
+
+- Returns an object with the sale that matches the id.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/saleById.gif)
+
+#### POST `/sales`
+
+- Creates a new sale.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/postSale.gif)
+
+#### PUT `/sales/:id`
+
+- Updates a sale that matches the id.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/putSale.gif)
+
+#### DELETE `/sales/:id`
+
+- Deletes a sale that matches the id.
+
+![](https://github.com/gabesouto/store-manager/blob/main/public/deleteSale.gif)
 
 ## Used Stacks
 

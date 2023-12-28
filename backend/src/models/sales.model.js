@@ -67,7 +67,20 @@ const getAll = async () => {
     return result;
   };
 
-  
+  const updateSale = async (id, quantity) => {
+    const updateSaleQuery = 'UPDATE StoreManager.sales_products SET quantity = ? WHERE sale_id = ?';
+    await connection.execute(updateSaleQuery, [quantity, id]);
+
+    const [rows] = await connection.execute(
+      `SELECT s.date, sp.product_id, sp.quantity
+       FROM StoreManager.sales AS s
+       JOIN StoreManager.sales_products AS sp ON s.id = sp.sale_id
+       WHERE sp.sale_id = ?;`,
+      [id],
+    );
+
+    return rows;
+  };
   
 module.exports = {
   getAll,
@@ -75,6 +88,7 @@ module.exports = {
   insertSale,
   insertSaleProduct,
   deleteSale,
+  updateSale,
 
 };
 // "saleId": 1,

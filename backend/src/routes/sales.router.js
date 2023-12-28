@@ -4,7 +4,7 @@ const {
     quantityValidation,
     validateSingleProductId,
   } = require('../middlewares/salesMiddlewares');
-  
+
 const { salesController } = require('../controllers');
 
 const salesRouter = Router();
@@ -20,6 +20,8 @@ quantityValidation,
 validateSingleProductId,
 salesController.insertSale,
 );
+
+salesRouter.put('/:id', salesController.updateSale);
 
 salesRouter.delete('/:id', salesController.deleteSale);
 
