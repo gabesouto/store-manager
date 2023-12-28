@@ -24,7 +24,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 - Returns an array with all products.
 
-![](https://github.com/gabesouto/store-manager/blob/main/public/productsGetAll.webm)
+![](https://github.com/gabesouto/store-manager/blob/main/public/ezgif.com-video-to-gif-converter.gif)
 
 ## Used Stacks
 
