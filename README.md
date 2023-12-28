@@ -32,8 +32,6 @@ I am satisfied with the result of this project and excited to continue improving
 - JWT (JSON Web Tokens)
 - Mocha / Chai
 
-## Running Locally
-
 Clone the project
 
 ````bash
@@ -48,13 +46,33 @@ Entre no diretório do projeto
 Install dependencies
 
 ```bash
+# Install dependencies
 npm install
 
+# Start the compose containers for `backend` and `db`
+# The application will be available at `http://localhost:3001` in development mode
+docker-compose up -d
+
+# You can view the application logs with `docker logs -n 20 -f <container-name>`
+docker logs -n 20 -f store_manager
 ```
 
+</details>
+
+<details>
+<summary>🖥️ Starting the application locally</summary>
+
+⚠️ Attention: When running locally, the application should receive environment variables as exemplified in env.example to communicate with the database service.
+
 ```bash
+# Install dependencies
+npm install
+
+# Start only the `db` service in compose
 docker-compose up -d db
 
-# It's possible to see the logs using the following command: `docker logs -n 20 -f <name-of-the-container>`
-docker logs -n 20 -f store_manager
+# Start the application in development mode
+npm run dev:local
+
+
 ```
