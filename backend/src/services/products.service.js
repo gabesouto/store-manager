@@ -38,10 +38,18 @@ const deleteProduct = async (id) => {
   return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
 };
 
+const searchProduct = async (q) => {
+  console.log('SERVICE', 'aaaaaaaaaaaaaaa');
+  const result = await productsModel.searchProduct(q);
+  console.log('SERVICE', result);
+  return result;
+};
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
   deleteProduct,
   updateProduct,
+  searchProduct,
 };
