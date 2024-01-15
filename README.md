@@ -88,7 +88,10 @@ I am satisfied with the result of this project and excited to continue improving
 
 ![](https://github.com/gabesouto/store-manager/blob/main/public/deleteSale.gif)
 
-## Used Stacks
+
+</details>
+
+## Stacks
 
 - Node.js
 - MySQL
@@ -121,7 +124,6 @@ docker-compose up -d
 docker logs -n 20 -f store_manager
 ```
 
-</details>
 
 <details>
 <summary>🖥️ Starting the application locally</summary>
