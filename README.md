@@ -104,12 +104,12 @@ Clone the project
 ````bash
 git clone git@github.com:gabesouto/store-manager.git
 
+````
 Entre no diretório do projeto
 
 ```bash
   cd store-manager
 ````
-
 Install dependencies
 
 ```bash
