@@ -1,22 +1,81 @@
-# Store Manager Project
+# Store Manager 
 
-In this project, I developed an API using a layered architecture!
+## Descrição
 
-The API I created is a sales management system, allowing the creation, viewing, deletion, and updating of products and sales. I used the MySQL database to manage data effectively. Additionally, the API was developed following RESTful principles.
+Neste projeto, desenvolvi um sistema de gestão de vendas!
 
-Throughout the development of this project, I created comprehensive tests to ensure the functionality of the implementations, thereby reinforcing my skills as a developer.
+A API que criei é um sistema de gestão de vendas, permitindo a criação, visualização, exclusão e atualização de produtos e vendas. Utilizei o banco de dados MySQL para gerenciar os dados de forma eficaz. Além disso, a API foi desenvolvida seguindo os princípios RESTful.
 
-During this project, I was able to:
+Ao longo do desenvolvimento deste projeto, criei testes abrangentes para garantir a funcionalidade das implementações, fortalecendo assim minhas habilidades como desenvolvedor.
 
-- Successfully interact with a MySQL relational database;
-- Implement a robust and well-structured API, following the layered architecture;
-- Ensure data integrity by implementing validations for the data received by the API;
-- Reinforce my skills by writing effective tests for the APIs, ensuring the correct implementation of endpoints.
+Durante este projeto, fui capaz de:
 
-I am satisfied with the result of this project and excited to continue improving my skills while facing new exciting challenges!
+Interagir com sucesso com um banco de dados relacional MySQL;
+Implementar uma API robusta e bem estruturada, seguindo a arquitetura em camadas;
+Garantir a integridade dos dados implementando validações para os dados recebidos pela API;
+Reforçar minhas habilidades escrevendo testes eficazes para a API, garantindo a implementação correta dos endpoints.
+
+## Funcionalidades 
+### Produtos
+
+1. **Listar Todos os Produtos:**
+   - Método: GET
+   - Endpoint: `/products`
+   - Descrição: Retorna um array com todos os produtos cadastrados.
+
+2. **Buscar Produto por ID:**
+   - Método: GET
+   - Endpoint: `/products/:id`
+   - Descrição: Retorna um objeto com o produto que corresponde ao ID especificado.
+
+3. **Criar Novo Produto:**
+   - Método: POST
+   - Endpoint: `/products`
+   - Descrição: Cria um novo produto com base nos dados fornecidos.
+
+4. **Atualizar Produto por ID:**
+   - Método: PUT
+   - Endpoint: `/products/:id`
+   - Descrição: Atualiza um produto existente que corresponde ao ID especificado.
+
+5. **Excluir Produto por ID:**
+   - Método: DELETE
+   - Endpoint: `/products/:id`
+   - Descrição: Exclui um produto que corresponde ao ID especificado.
+
+6. **Pesquisar Produtos por Termo:**
+   - Método: GET
+   - Endpoint: `/products/search?q=:searchTerm`
+   - Descrição: Retorna um array de produtos que correspondem ao termo de busca especificado.
+
+### Vendas
+
+7. **Listar Todas as Vendas:**
+   - Método: GET
+   - Endpoint: `/sales`
+   - Descrição: Retorna um array com todas as vendas registradas.
+
+8. **Buscar Venda por ID:**
+   - Método: GET
+   - Endpoint: `/sales/:id`
+   - Descrição: Retorna um objeto com a venda que corresponde ao ID especificado.
+
+9. **Criar Nova Venda:**
+   - Método: POST
+   - Endpoint: `/sales`
+   - Descrição: Cria uma nova venda com base nos dados fornecidos.
+
+10. **Atualizar Venda por ID:**
+    - Método: PUT
+    - Endpoint: `/sales/:id`
+    - Descrição: Atualiza uma venda existente que corresponde ao ID especificado.
+
+11. **Excluir Venda por ID:**
+    - Método: DELETE
+
 
 <details>
-<summary>Endpoints</summary>
+<summary>Exemplo de uso dos endpoints</summary>
 
 ## Products
 
@@ -91,7 +150,7 @@ I am satisfied with the result of this project and excited to continue improving
 
 </details>
 
-## Stacks
+## Stacks Utilizadas
 
 - Node.js
 - MySQL
@@ -99,7 +158,12 @@ I am satisfied with the result of this project and excited to continue improving
 - JWT (JSON Web Tokens)
 - Mocha / Chai
 
-Clone the project
+## Como rodar o sistema
+
+<details>
+<summary>🐳 Com Docker</summary>
+
+Clone o projeto
 
 ````bash
 git clone git@github.com:gabesouto/store-manager.git
@@ -110,35 +174,42 @@ Entre no diretório do projeto
 ```bash
   cd store-manager
 ````
-Install dependencies
+Instale as dependências do projeto
 
 ```bash
 # Install dependencies
 npm install
+```
 
-# Start the compose containers for `backend` and `db`
-# The application will be available at `http://localhost:3001` in development mode
+Para iniciar os contêineres do compose para backend e db, utilize o seguinte comando:
+```bash
 docker-compose up -d
+```
 
-# You can view the application logs with `docker logs -n 20 -f <container-name>`
+ Para ver os logs da aplicação 
+ ```bash
 docker logs -n 20 -f store_manager
 ```
-
+</details>
 
 <details>
-<summary>🖥️ Starting the application locally</summary>
+<summary>🖥️ Localmente</summary>
 
-⚠️ Attention: When running locally, the application should receive environment variables as exemplified in env.example to communicate with the database service.
+⚠️ Atenção: Ao executar localmente, a aplicação deve receber variáveis de ambiente conforme exemplificado no arquivo env.example para se comunicar com o serviço de banco de dados.
 
+Instale as dependências do projeto
 ```bash
-# Install dependencies
 npm install
-
-# Start only the `db` service in compose
-docker-compose up -d db
-
-# Start the application in development mode
-npm run dev:local
-
-
 ```
+
+ Inicie apenas o serviço db no Docker Compose, você pode utilizar o seguinte comando:
+ ```bash
+docker-compose up -d db
+```
+
+
+Para iniciar a aplicação em modo de desenvolvimento
+```bash
+npm run dev:local
+```
+
